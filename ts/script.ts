@@ -63,10 +63,6 @@ user1.rest();
 user1.ricarica(10);
 user1.calling(22);
 console.log(user1)
-
-
-
-
 // class Wind extends Smartphone{
 
 // }

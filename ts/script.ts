@@ -22,7 +22,6 @@ abstract class Smartphone {
     }
     creditoResiduo(): any {
         let res = this.credito - this.minutiChiamata * this.tariffa;
-        //console.log(`Il tuo credito è ${res}`);
     }
     mostraDurataChiamate(): number {
         return this.minutiChiamata;
@@ -32,25 +31,31 @@ abstract class Smartphone {
     }
 }
 class Vodafone extends Smartphone {
-    ricarica(soldi:number): any {
-        console.log(this.credito += soldi);
-     }
     calling(minutes: number): any {
-        if(this.credito >= minutes *0.2) {
+        if(this.credito >= minutes * this.tariffa) {
             this.minutiChiamata += minutes;
-            this.credito -= minutes *0.2;
+            this.credito -= minutes * this.tariffa;
         } else {
-            console.log(`Gentile utente il tuo credito è insufficiente, attualmente hai ${this.credito}, fai una ricarica.`)
+            console.log(`Gentile utente il tuo credito è insufficiente, attualmente hai ${this.credito} €, fai una ricarica.`)
         }
     }
-
+    creditoResiduo(): any {
+        let res = this.credito - this.minutiChiamata * this.tariffa;
+        console.log(`Il tuo credito è ${res} €.`);
+    }
+    mostraDurataChiamate(): any {
+        console.log(`Il totale dei minuti trascorsi in chiamta sono: ${this.minutiChiamata}`);
+    }
 }
 let user1 = new Vodafone(0,0,0.2);
-// user1.credito += 25;
-// user1.durataChiamata(8);
-// user1.creditoResiduo();
-user1.ricarica(50)
+user1.ricarica(5)
+user1.creditoResiduo();
 user1.calling(5);
+user1.calling(13);
+user1.calling(7);
+user1.mostraDurataChiamate()
+user1.azzeraChiamate()
+user1.calling(1)
 console.log(user1)
 
 

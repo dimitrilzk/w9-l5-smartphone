@@ -63,9 +63,28 @@ let user1 = new Vodafone(0,0,0.2);
 // user1.ricarica(10);
 // user1.calling(22);
 // console.log(user1)
-let btn = document.querySelector(".cres") as HTMLButtonElement;
-btn.addEventListener('click', function show() {
-    user1.creditoResiduo();
-    let h1 = document.querySelector("h2") as HTMLHeadingElement;
-    h1.innerText = `Il tuo credito residuo è di ${user1.credito} euro.`
+let btnCredito = document.querySelector(".cres") as HTMLButtonElement;
+btnCredito.addEventListener('click', function showCr() {
+    let display = document.querySelector("h2") as HTMLHeadingElement;
+    display.innerText = `Il tuo credito residuo è di ${user1.credito} euro.`
 })
+let btnRic5 = document.querySelector(".ric5") as HTMLButtonElement;
+btnRic5.addEventListener('click', function ric5euro(){
+    user1.ricarica(5);
+    let display = document.querySelector("h2") as HTMLHeadingElement;
+    display.innerText = `La tua ricarica è stata effetuata, il credito totale è di ${user1.credito} euro.`
+})
+
+let btnRic10 = document.querySelector(".ric10") as HTMLButtonElement;
+btnRic10.addEventListener('click', function ric10euro(){
+    user1.ricarica(10);
+    let display = document.querySelector("h2") as HTMLHeadingElement;
+    display.innerText = `La tua ricarica è stata effetuata, il credito totale è di ${user1.credito} euro.`
+})
+let btnRic20 = document.querySelector(".ric20") as HTMLButtonElement;
+btnRic20.addEventListener('click', function ric20euro(){
+    user1.ricarica(20);
+    let display = document.querySelector("h2") as HTMLHeadingElement;
+    display.innerText = `La tua ricarica è stata effetuata, il credito totale è di ${user1.credito} euro.`
+})
+

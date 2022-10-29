@@ -46,7 +46,7 @@ class Vodafone extends Smartphone {
     mostraDurataChiamate(): any {
         console.log(`Il totale dei minuti trascorsi in chiamta sono: ${this.minutiChiamata}`);
     }
-    rest(): any {
+    reset(): any {
        return this.credito = 0, this.minutiChiamata =0;
     }
 }
@@ -59,7 +59,7 @@ let user1 = new Vodafone(0,0,0.2);
 // user1.mostraDurataChiamate();
 // user1.azzeraChiamate();
 // user1.calling(1);
-// user1.rest();
+// user1.reset();
 // user1.ricarica(10);
 // user1.calling(22);
 // console.log(user1)
@@ -86,5 +86,10 @@ btnRic20.addEventListener('click', function ric20euro(){
     user1.ricarica(20);
     let display = document.querySelector("h2") as HTMLHeadingElement;
     display.innerText = `La tua ricarica è stata effetuata, il credito totale è di ${user1.credito} euro.`
+})
+let tarif = document.querySelector(".tarif") as HTMLButtonElement;
+tarif.addEventListener('click', function tarif(){
+    let display = document.querySelector("h2") as HTMLHeadingElement;
+    display.innerText = `La tua tariffa attuale è di ${user1.tariffa} centesimi al minuto.`
 })
 

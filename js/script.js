@@ -46,21 +46,21 @@ class Vodafone extends Smartphone {
     }
 }
 let user1 = new Vodafone(0, 0, 0.2);
-user1.ricarica(5);
-user1.creditoResiduo();
-user1.calling(5);
-user1.calling(13);
-user1.calling(7);
-user1.mostraDurataChiamate();
-user1.azzeraChiamate();
-user1.calling(1);
-user1.rest();
-user1.ricarica(10);
-user1.calling(22);
-console.log(user1);
-// class Wind extends Smartphone{
-// }
-// let user2 = new Samsung(0,0,0.2);
-// user2.ricarica(20);
-// user2.durataChiamata(5)
-// console.log(user2)
+// user1.ricarica(5);
+// user1.creditoResiduo();
+// user1.calling(5);
+// user1.calling(13);
+// user1.calling(7);
+// user1.mostraDurataChiamate();
+// user1.azzeraChiamate();
+// user1.calling(1);
+// user1.rest();
+// user1.ricarica(10);
+// user1.calling(22);
+// console.log(user1)
+let btn = document.querySelector(".cres");
+btn.addEventListener('click', function show() {
+    user1.creditoResiduo();
+    let h1 = document.querySelector("h2");
+    h1.innerText = `Il tuo credito residuo è di ${user1.credito} euro.`;
+});
